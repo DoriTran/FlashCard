@@ -1,0 +1,57 @@
+@import "@/app/globals.scss";
+
+.homeInfoWrapper {
+  @include flexCol;
+  font-size: $super;
+  height: 9.375rem;
+  .data {
+    color: var(--primary-dark);
+    font-weight: $bold;
+  }
+
+  .info {
+    color: var(--text);
+    font-weight: $semibold;
+  }
+}
+
+.homeActionWrapper {
+  @include flexRow;
+  justify-content: space-around;
+  padding: 0px 2rem;
+  margin-bottom: 5rem;
+  width: 70%;
+
+  border-radius: 25px;
+  background-color: var(--primary-light);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+
+  .action {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: box-shadow 0.25s ease-in-out;
+    @include flexRow;
+    cursor: pointer;
+  }
+
+  .action:hover {
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: $phone) {
+  .hidden {
+    display: none;
+  }
+
+  .homeActionWrapper {
+    justify-content: center;
+    gap: 15%;
+  }
+}

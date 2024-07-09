@@ -1,0 +1,29 @@
+@import "@/app/globals.scss";
+
+.mainContainer {
+  display: block;
+  transition: margin-left 0.3s ease;
+  background-color: var(--background);
+  min-height: 100vh;
+  position: relative;
+}
+
+.expandedContainer {
+  margin-left: $expandedSidebar;
+}
+
+.collapsedContainer {
+  margin-left: $collapsedSidebar;
+}
+
+.hideContainer {
+  margin-left: 0;
+}
+
+@media (max-width: $tablet) {
+  .mainContainer {
+    margin-left: 0 !important;
+    min-height: calc(100vh - $collapsedSidebar);
+    max-height: calc(100vh - $collapsedSidebar);
+  }
+}

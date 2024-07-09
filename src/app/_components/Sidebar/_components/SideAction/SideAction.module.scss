@@ -1,0 +1,17 @@
+@import "@/app/globals.scss";
+
+.Sidebar {
+    @include flexCol;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    padding-bottom: 5px;
+
+    .action {
+      @include flexCol;
+      width: auto;
+      height: 60px;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+  }

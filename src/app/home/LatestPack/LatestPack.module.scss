@@ -1,0 +1,49 @@
+@import "@/app/globals.scss";
+
+$packWidth: 200px;
+$packHeight: 250px;
+$chartRadius: calc($packWidth - 20px);
+
+.container {
+  display: flex;
+  gap: 25px;
+
+  .remain {
+    font-weight: $semibold;
+    font-size: $extra;
+    color: var(--text);
+  }
+
+  .name {
+    font-weight: $bold;
+    font-size: $super;
+    color: var(--text);
+    width: $packWidth;
+    height: $packHeight;
+  }
+
+  .round {
+    color: var(--primaryDark);
+    font-size: $large;
+    border-radius: 50%;
+    width: $packWidth;
+    height: $packWidth;
+    margin-top: -calc($packWidth / 2);
+    @include flexRow;
+
+    .progress {
+      width: $chartRadius;
+      height: $chartRadius;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress::after {
+      content: attr(data-percent) "%";
+      position: absolute;
+    }
+  }
+}

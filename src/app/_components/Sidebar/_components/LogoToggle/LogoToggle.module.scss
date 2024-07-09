@@ -1,0 +1,25 @@
+@import "@/app/globals.scss";
+
+.logo {
+  position: absolute;
+  right: 0;
+  @include flexRow;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logoExpanded {
+  transform: rotate(90deg);
+}
+
+.logoCollapsed {
+  transform: rotate(0deg);
+}
+
+@media (max-width: $tablet) {
+  .logo {
+    display: none;
+  }
+}

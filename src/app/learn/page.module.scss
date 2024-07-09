@@ -1,0 +1,51 @@
+@mixin reactSize {
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.primary {
+  background-color: var(--primary);
+  @include reactSize;
+}
+
+.primaryDark {
+  background-color: var(--primary-dark);
+  @include reactSize;
+}
+
+.primaryLight {
+  background-color: var(--primary-light);
+  @include reactSize;
+}
+
+.secondary {
+  background-color: var(--secondary);
+  @include reactSize;
+}
+
+.secondaryLight {
+  background-color: var(--secondary-light);
+  @include reactSize;
+}
+
+.sidebar {
+  background-color: var(--sidebar);
+  @include reactSize;
+}
+
+.background {
+  background-color: var(--background);
+  @include reactSize;
+}
+
+.text {
+  color: var(--text);
+  @include reactSize;
+}
+
+.textContrast {
+  color: var(--text-contrast);
+  background-color: var(--primary);
+  @include reactSize;
+}

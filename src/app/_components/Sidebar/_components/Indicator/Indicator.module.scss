@@ -1,0 +1,107 @@
+@import "@/app/globals.scss";
+
+@mixin topTransition {
+  transition: top 0.5s ease;
+}
+
+@mixin leftTransition {
+  transition: left 0.5s ease;
+}
+
+.indicator {
+  @include topTransition;
+  position: absolute;
+  background: var(--background);
+  right: 0px;
+  height: 60px;
+  width: 60px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 1;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-bottom-right-radius: 30px;
+  box-shadow: 5px 5px 0 5px var(--background);
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-top-right-radius: 30px;
+  box-shadow: 5px -5px 0 5px var(--background);
+}
+
+.circle {
+  @include topTransition;
+  position: absolute;
+  right: 6px;
+  height: 48px;
+  width: 48px;
+  border: 4px solid var(--primary-dark);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.title {
+  transition:
+    top 0.5s ease,
+    width 0.5s ease;
+  position: absolute;
+  right: 6px;
+  height: 60px;
+  background: linear-gradient(to left, var(--primary), transparent);
+}
+
+@media (max-width: $tablet) {
+  .indicator {
+    @include leftTransition;
+    right: unset;
+    border-top-left-radius: unset;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+
+  .indicator::before {
+    top: 0px;
+    left: -30px;
+    right: unset;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 100px;
+    box-shadow: 5px -15px 0 5px var(--background);
+  }
+
+  .indicator::after {
+    bottom: unset;
+    right: unset;
+    top: 0px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 100px;
+    box-shadow: -15px -5px 0 5px var(--background);
+  }
+
+  .circle {
+    @include leftTransition;
+    top: 6px;
+    right: unset;
+  }
+
+  .title {
+    display: none;
+  }
+}

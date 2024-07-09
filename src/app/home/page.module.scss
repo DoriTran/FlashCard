@@ -1,0 +1,55 @@
+@import "@/app/globals.scss";
+
+.page {
+  @include flexCol;
+  height: calc(100vh - 8px);
+
+  .main {
+    @include flexRow;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    .slogan {
+      @include flexCol;
+      flex-grow: 1;
+      gap: 20px;
+
+      .bigSlogan {
+        font-size: $slogan;
+        font-weight: $bold;
+
+        .firstLine {
+          min-width: 40vw;
+
+          .flash {
+            color: var(--primary-dark);
+          }
+        }
+
+        .secondLine {
+          min-width: 40vw;
+          max-width: calc(40vw + 100px);
+          width: calc(40vw + 100px);
+          text-align: right;
+        }
+      }
+
+      .smallSlogan {
+        font-size: $super;
+        font-weight: $semibold;
+        color: var(--primary-dark);
+      }
+    }
+
+    .lastest {
+      @include flexRow;
+      gap: 25px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .page {
+    height: calc(100vh - 88px);
+  }
+}
